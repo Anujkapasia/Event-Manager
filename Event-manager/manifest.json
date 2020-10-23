@@ -1,0 +1,19 @@
+{
+    "name":"My Events manage your events",
+    "short_name":"My Events",
+    "start_url":".",
+    "display":"standalone",
+    "theme_color":"#eee",
+    "background_color":"#303841",
+    "description":"Event manager App.",
+    "icons": [
+        {
+            "src":"./images/MyEvents-icon.png",
+            "sizes":"200x200",
+            "type":"image/png"
+        }
+        
+    ]
+
+
+}

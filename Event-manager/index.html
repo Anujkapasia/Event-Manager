@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title> Event Manager </title>
+        <link rel="stylesheet" href="index.css" />
+        <link rel="manifest" href="manifest.json">
+        <link rel="icon" href="./images/MyEvents-icon.png">
+        <link rel="apple-touch-icon" href="./images/MyEvents-icon.png" />
+        <meta name="theme-color" content="#eeeeee" />
+        <meta
+            name="description"
+            content="My Events - Create and manage your events."
+        />
+    </head>
+    <body>
+        <div id="app" >
+            <form id="create-event-container" >
+                <div id="create-event-title" >
+                    <span>Add Event</span>
+                    <div id="buttons-container" >
+                        <button id="create-event-button" onclick="submitNewEvent()" >Save</button>
+                        <button id="create-event-cancel" onclick="cancelNewEvent();return false;" >cancel</button>
+                    </div>       
+                </div>
+                <input type="text" id="create-event-input" placeholder="Event Name"  >
+                <textarea placeholder="Event Description" id="create-event-textarea"  ></textarea>
+                <div id="event-options-container" >
+                    <div><label for="dates">On</label>
+                    <input type="date" onchange="dateCheck()" id="event-date-input" name="dates" ></div>
+                    <div id="event-type" ><span onclick="showAllTypes()" id="selected-type" >Event Type</span>
+                        <div id="event-types"  >
+                            <span class="type" id="family" onclick="selectType('Family')"  >Family</span>
+                            <span class="type" id="work" onclick="selectType('Work')" >Work</span>
+                            <span class="type" id="party" onclick="selectType('Party')"  >Party</span>
+                            <span class="type" id="cultural" onclick="selectType('Cultural')"  >Cultural</span>
+                            <span class="type" id="festival" onclick="selectType('Festival')"  >Festival</span>
+                        </div>
+                    </div>
+                    <div id="slots-options" ><span onclick="showAvailableSlots()" id="selected-slot" >Select Slot</span>
+                        <div id="available-slots"  >
+                            <span class="slot" onclick="selectSlot('10:00-10:30 AM')" id='slot1'  >10:00-10:30 AM</span>
+                            <span class="slot" onclick="selectSlot('10:30-11:00 AM')" id='slot2'  >10:30-11:00 AM</span>
+                            <span class="slot" onclick="selectSlot('11:30-12:00 PM')" id='slot3' >11:00-11:30 AM</span>
+                            <span class="slot" onclick="selectSlot('12:00-12:30 PM')" id='slot4' >11:30-12:00 PM</span>
+                            <span class="slot" onclick="selectSlot('12:30-1:00 PM')" id='slot5' >12:00-12:30 PM</span>
+                            <span class="slot" onclick="selectSlot('2:30-3:00 PM')" id='slot6' >12:30-1:00 PM</span>
+                            <span class="slot" onclick="selectSlot('3:00-3:30 PM')" id='slot7' >2:30-3:00 PM</span>
+                            <span class="slot" onclick="selectSlot('3:30-4:00 PM')" id='slot8' >3:00-3:30 PM</span>
+                            <span class="slot" onclick="selectSlot('4:00-4:30 PM')" id='slot9' >3:30-4:00 PM</span>
+                            <span class="slot" onclick="selectSlot('4:30-5:00 PM')" id='slot10' >4:00-4:30 PM</span>
+                            <span class="slot" onclick="selectSlot('5:00-5:30 PM')" id='slot11' >4:30-5:00 PM</span>
+                            <span class="slot" onclick="selectSlot('5:30-6:00 PM')" id='slot12' >5:00-5:30 PM</span>
+                        
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <div id="events-container" >
+                <div id="header" >
+                    <h1>My Events</h1>
+                    <button id="add-event" onclick="createNewEvent()" >Add Event</button>
+
+                </div>
+
+                <div id="all-events-container" >
+                    
+                    
+                </div>
+
+            </div>
+
+        </div>
+        <script src="index.js" ></script>
+    </body>
+</html>
